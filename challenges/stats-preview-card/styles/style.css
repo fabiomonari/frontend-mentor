@@ -1,0 +1,123 @@
+:root {
+  --card-mobile-width: 325px; /* 👈 Modify only this value to update the card size and image aspect ratio */
+  --color-accent: hsl(277, 64%, 61%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(233, 47%, 7%);
+  padding: 90px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+
+.Card {
+  width: var(--card-mobile-width);
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(244, 38%, 16%);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.Card-headerImg {
+  position: relative;
+  display: block;
+  height: calc(var(--card-mobile-width) * calc(480 / 654));
+  width: 100%;
+  background: url('../images/image-header-mobile.jpg') no-repeat center top;
+  background-size: contain;
+}
+.Card-headerImg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-accent);
+  mix-blend-mode: multiply;
+}
+
+.Card-body {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+}
+.Card-body h1 {
+  margin: 0;
+  letter-spacing: -1.25px;
+}
+.Card-body h1 span {
+  color: var(--color-accent);
+}
+.Card-body p {
+  line-height: 25px;
+}
+
+.Card-data > div {
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+}
+.Card-data > div > h2 {
+  margin: 0 0 15px 0;
+  line-height: 1.5rem;
+  font-size: 1.8rem;
+}
+.Card-data > div > span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.Card-body h1,
+.Card-data > div > h2 {
+  color: hsl(0, 0%, 100%);
+}
+
+.Attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.Attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Desktop */
+@media screen and (min-width: 1440px) {
+  .Card {
+    flex-direction: row;
+    width: 1110px;
+    height: 446px;
+    text-align: left;
+  }
+
+  .Card-body {
+    order: 1;
+    width: 570px;
+    padding: 70px 120px 70px 70px;
+  }
+  .Card-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .Card-headerImg {
+    order: 2;
+    width: 540px;
+    height: 100%;
+    background-image: url('../images/image-header-desktop.jpg');
+  }
+}
