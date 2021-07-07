@@ -1,0 +1,120 @@
+:root {
+  --primaryBg-color: hsl(0, 0%, 80%);
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: hsla(0, 0%, 0%, 0.8);
+  padding: 16px;
+  margin: 0 auto;
+  background-color: hsl(0, 0%, 95%);
+  max-width: 1920;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 48px;
+}
+header h1 {
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+header p:first-of-type {
+  margin-top: 24px;
+}
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header ul li {
+  margin: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(0, auto);
+  gap: 48px;
+}
+.challenge a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background-color: hsl(260, 100%, 50%);
+  box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+  color: blue;
+}
+
+.challenge a > div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  padding: 16px;
+  font-family: monospace;
+  background-color: var(--primaryBg-color);
+  opacity: 0.8;
+  border-top-left-radius: 4px;
+}
+.challenge img {
+  width: 100%;
+  margin: 0 auto;
+}
+.challenge a,
+.challenge img {
+  display: block;
+  border-radius: 6px;
+}
+.challenge a:hover img {
+  filter: opacity(60%);
+}
+.challenge h2 {
+  font-weight: 300;
+  font-size: 20px;
+  margin: 16px 0 0 0;
+}
+.challenge p {
+  margin-top: 0;
+  font-size: 14px;
+  font-family: monospace;
+  color: hsl(0, 0%, 50%);
+}
+.challenge ul {
+  list-style: none;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+}
+.challenge ul li {
+  margin-right: 8px;
+  padding: 4px;
+  background-color: var(--primaryBg-color);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+  header ul {
+    display: inline-flex;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
