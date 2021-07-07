@@ -1,0 +1,137 @@
+:root {
+  --c-orange: hsl(31, 77%, 52%);
+  --c-cyan: hsl(184, 100%, 22%);
+  --c-dark-cyan: hsl(179, 100%, 13%);
+  --c-white: hsla(0, 0%, 100%, 0.75);
+  --c-gray: hsl(0, 0%, 95%);
+  --box-corners: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+main,
+.attribution {
+  display: none;
+}
+
+@media only screen and (min-width: 375px) {
+  body {
+    padding: 90px 25px;
+  }
+
+  body,
+button {
+    background-color: var(--c-gray);
+  }
+
+  .smallscreen {
+    display: none;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 325px;
+  }
+  main > div {
+    display: flex;
+    flex-direction: column;
+    padding: 48px;
+  }
+  main > div:first-child {
+    border-radius: var(--box-corners) var(--box-corners) 0 0;
+  }
+  main > div:last-child {
+    border-radius: 0 0 var(--box-corners) var(--box-corners);
+  }
+  main > div img {
+    width: fit-content;
+  }
+  main > div h2 {
+    color: var(--c-gray);
+    font-family: "Big Shoulders Display", cursive;
+    text-transform: uppercase;
+    font-size: 36px;
+    margin: 40px 0;
+  }
+  main > div p {
+    margin: 0;
+    color: var(--c-white);
+  }
+  main > div button {
+    border-radius: 40px;
+    border: 2px solid transparent;
+    padding: 14px 30px;
+    margin-top: 30px;
+    width: fit-content;
+  }
+  main > div button:hover {
+    background-color: transparent;
+    border-color: var(--c-gray);
+    color: var(--c-gray);
+    cursor: pointer;
+  }
+  main .sedans {
+    background-color: var(--c-orange);
+  }
+  main .sedans button {
+    color: var(--c-orange);
+  }
+  main .suvs {
+    background-color: var(--c-cyan);
+  }
+  main .suvs button {
+    color: var(--c-cyan);
+  }
+  main .luxury {
+    background-color: var(--c-dark-cyan);
+  }
+  main .luxury button {
+    color: var(--c-dark-cyan);
+  }
+
+  .attribution {
+    display: block;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  .attribution a {
+    color: #3e52a3;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  main {
+    flex-direction: row;
+    max-width: 864px;
+    min-height: 470px;
+  }
+  main > div:first-child {
+    border-radius: var(--box-corners) 0 0 var(--box-corners);
+  }
+  main > div:last-child {
+    border-radius: 0 var(--box-corners) var(--box-corners) 0;
+  }
+  main > div button {
+    margin-top: auto;
+  }
+}
