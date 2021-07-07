@@ -18,7 +18,7 @@ Users should be able to:
 
 ## Links
 
-- Solution URL: [Github Pages](https://fabiomonari.github.io/fe-challenge-stats-card/)
+- Solution URL: [Github Pages](https://fabiomonari.github.io/frontend-mentor/challenges/stats-preview-card/)
 
 ## Built with
 
